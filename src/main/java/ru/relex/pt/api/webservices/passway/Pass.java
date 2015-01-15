@@ -1,9 +1,12 @@
 package ru.relex.pt.api.webservices.passway;
 
-import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
-@XmlRootElement(name = "pass")
+import com.sun.xml.txw2.annotation.XmlElement;
+
+
+
+@XmlRootElement(name="pass")
 public class Pass {
 	private long id;
 	private long userId;
@@ -52,7 +55,7 @@ public class Pass {
 		this.direction = direction;
 	}
 
-	@XmlElement
+	
 	public long getId() {
 		return id;
 	}
@@ -70,7 +73,7 @@ public class Pass {
 		this.userId = userId;
 	}
 
-	@XmlElement
+	
 	public String getFirstName() {
 		return firstName;
 	}
@@ -79,7 +82,7 @@ public class Pass {
 		this.firstName = firstName;
 	}
 
-	@XmlElement
+	
 	public String getLastName() {
 		return lastName;
 	}
@@ -88,7 +91,7 @@ public class Pass {
 		this.lastName = lastName;
 	}
 
-	@XmlElement
+	
 	public String getMiddleName() {
 		return middleName;
 	}
@@ -97,7 +100,7 @@ public class Pass {
 		this.middleName = middleName;
 	}
 
-	@XmlElement
+	
 	public long getPassTime() {
 		return passTime;
 	}
@@ -106,7 +109,7 @@ public class Pass {
 		this.passTime = passTime;
 	}
 
-	@XmlElement
+	
 	public String getStatus() {
 		return status;
 	}
