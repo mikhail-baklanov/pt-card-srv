@@ -1,6 +1,10 @@
 package ru.relex.pt.api.webservices.passway;
 
+import java.util.List;
+
 import javax.xml.bind.annotation.XmlRootElement;
+
+import ru.relex.pt.api.webservices.users.UserMessage;
 
 import com.sun.xml.txw2.annotation.XmlElement;
 
@@ -17,9 +21,10 @@ public class Pass {
 	private String middleName;
 	private long passTime;
 	private String status;
+	
+	private List<UserMessage> userMessages;
 
 	public Pass() {
-
 	}
 
 	public Pass(long id, long userId, String cardId, String direction,
@@ -116,6 +121,14 @@ public class Pass {
 
 	public void setStatus(String status) {
 		this.status = status;
+	}
+
+	public List<UserMessage> getUserMessages() {
+	    return userMessages;
+	}
+
+	public void setUserMessages(List<UserMessage> userMessages) {
+	    this.userMessages = userMessages;
 	}
 
 }

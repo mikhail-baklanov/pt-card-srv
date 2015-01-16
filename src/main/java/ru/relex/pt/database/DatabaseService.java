@@ -9,6 +9,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 import ru.relex.pt.dto.PtApiKeys;
+import ru.relex.pt.dto.PtUserMessages;
 import ru.relex.pt.dto.PtUsersDTO;
 import ru.relex.pt.dto.PwAbsentTypeDTO;
 import ru.relex.pt.dto.PwAbsentsDTO;
@@ -179,5 +180,16 @@ public class DatabaseService {
 	    status = "none";
 	}
 	return status;
+    }
+
+    public List<PtUserMessages> getUserMessages(int userId) {
+	List<PtUserMessages> msgs = new LinkedList<PtUserMessages>();
+	
+	for(PtUserMessages m: database.getUserMessages())
+	{
+	    if (m.getUser().getUserId().intValue()==userId)
+		msgs.add(m);
+	}
+	return msgs;
     }
 }

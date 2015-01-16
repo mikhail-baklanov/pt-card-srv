@@ -13,6 +13,7 @@ import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.QueryParam;
 
+import ru.relex.pt.api.webservices.users.MessageService;
 import ru.relex.pt.database.DatabaseService;
 import ru.relex.pt.database.IllegalOperationSequenceException;
 import ru.relex.pt.database.InvalidAbsentTypeException;
@@ -64,6 +65,7 @@ public class EntranceService {
 	newPass.setMiddleName(entrance.getUser().getMiddleName());
 	newPass.setPassTime(entrance.getPassTime().getTime());
 	newPass.setStatus(service.getUserStatus(entrance.getUser()));
+	newPass.setUserMessages(new MessageService().getMessages(entrance.getUser().getUserId().intValue()));
 	return newPass;
     }
 
