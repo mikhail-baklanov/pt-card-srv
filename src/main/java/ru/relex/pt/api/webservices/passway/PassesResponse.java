@@ -2,9 +2,6 @@ package ru.relex.pt.api.webservices.passway;
 
 import java.util.List;
 
-import javax.xml.bind.annotation.XmlRootElement;
-
-@XmlRootElement(name="passes_response")
 public class PassesResponse {
 	private List<Pass> passes;
 	private long lastUpdateTime;
@@ -32,7 +29,4 @@ public class PassesResponse {
 	public void setLastUpdateTime(long lastUpdateTime) {
 		this.lastUpdateTime = lastUpdateTime;
 	}
-	
-	
-
 }
