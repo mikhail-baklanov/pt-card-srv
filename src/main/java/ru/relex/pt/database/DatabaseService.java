@@ -8,6 +8,11 @@ import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 
+import ru.relex.pt.api.webservices.exceptions.IllegalOperationSequenceException;
+import ru.relex.pt.api.webservices.exceptions.InvalidAbsentTypeException;
+import ru.relex.pt.api.webservices.exceptions.NotAuthorizedException;
+import ru.relex.pt.api.webservices.exceptions.NotFoundEntranceException;
+import ru.relex.pt.api.webservices.exceptions.UnknownStatusException;
 import ru.relex.pt.dto.PtApiKeys;
 import ru.relex.pt.dto.PtUserMessages;
 import ru.relex.pt.dto.PtUsersDTO;
@@ -120,6 +125,8 @@ public class DatabaseService {
 	    return new PwAbsentTypeDTO(BigDecimal.valueOf(nextPK()), absentType);
 	else if ("work".equals(absentType))
 	    return new PwAbsentTypeDTO(BigDecimal.valueOf(nextPK()), absentType);
+	else if (absentType==null)
+	    return new PwAbsentTypeDTO(BigDecimal.valueOf(nextPK()), "personal");
 	throw new InvalidAbsentTypeException();
     }
 

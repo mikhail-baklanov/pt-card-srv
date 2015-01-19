@@ -13,13 +13,13 @@ import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.QueryParam;
 
+import ru.relex.pt.api.webservices.exceptions.IllegalOperationSequenceException;
+import ru.relex.pt.api.webservices.exceptions.InvalidAbsentTypeException;
+import ru.relex.pt.api.webservices.exceptions.NotAuthorizedException;
+import ru.relex.pt.api.webservices.exceptions.NotFoundEntranceException;
+import ru.relex.pt.api.webservices.exceptions.UnknownStatusException;
 import ru.relex.pt.api.webservices.users.MessageService;
 import ru.relex.pt.database.DatabaseService;
-import ru.relex.pt.database.IllegalOperationSequenceException;
-import ru.relex.pt.database.InvalidAbsentTypeException;
-import ru.relex.pt.database.NotAuthorizedException;
-import ru.relex.pt.database.NotFoundEntranceException;
-import ru.relex.pt.database.UnknownStatusException;
 import ru.relex.pt.dto.PwEntrance;
 
 @Path("/passway/entrance")
