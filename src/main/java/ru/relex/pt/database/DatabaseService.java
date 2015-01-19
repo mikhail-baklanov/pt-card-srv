@@ -182,7 +182,7 @@ public class DatabaseService {
 		else
 		    status = "work";
 	    } else
-		status = "apsent";
+		status = "absent";
 	} else {
 	    status = "none";
 	}
